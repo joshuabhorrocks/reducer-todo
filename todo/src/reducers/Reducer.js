@@ -10,24 +10,24 @@ export const initialState = [
 
 export const reducer = (state, action) => {
     switch (action.type) {
-        // case "ADD_TODO":
-        //     const newTodo = {
-        //         item: "",
-        //         completed: false,
-        //         id:Date.now()
-        //     }
-        //     return {
-        //         ...state,
-        //         todoList: [...state.initialState, newTodo]
-        //     }
-        // case "TOGGLE_COMPLETED":
-        //     const completed = {
+        case "ADD_TODO":
+            const newTodo = {
+                item: "",
+                completed: false,
+                id:Date.now()
+            }
+            return {
+                ...state,
+                initialState: [...initialState, newTodo]
+            }
+        case "TOGGLE_COMPLETED":
+            const completed = {
 
-        //     }
-        //     return {
-        //         ...state,
-        //         todoList: [...state.initialState, completed]
-        //     }
+            }
+            return {
+                ...state,
+                initialState: [...initialState, completed]
+            }
         default:
             return state;
     }
