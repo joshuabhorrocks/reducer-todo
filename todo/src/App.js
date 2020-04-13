@@ -1,5 +1,4 @@
 import React from 'react';
-import Todo from "../src/components/Todo"
 import TodoForm from "../src/components/TodoForm"
 
 import './App.css';
@@ -8,8 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Default Header</h1>
-        <Todo />
+        <h1>Your Todo List</h1>
       </header>
       <TodoForm />
     </div>

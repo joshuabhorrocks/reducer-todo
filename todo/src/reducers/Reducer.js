@@ -1,23 +1,34 @@
 import React from "react";
 
-export const todoList = [
+export const initialState = [
     {
-        item: "Learn about reducers", 
+        task: "Learn about reducers", 
         completed: false, 
-        id:Date.now()
-    }
+        id: 1
+    },
   ]
 
 export const reducer = (state, action) => {
     switch (action.type) {
-        default:
-            return state;
         // case "ADD_TODO":
         //     const newTodo = {
-        //         // item: ,
-        //         // completed: ,
-        //         // id:
+        //         item: "",
+        //         completed: false,
+        //         id:Date.now()
         //     }
+        //     return {
+        //         ...state,
+        //         todoList: [...state.initialState, newTodo]
+        //     }
+        // case "TOGGLE_COMPLETED":
+        //     const completed = {
 
+        //     }
+        //     return {
+        //         ...state,
+        //         todoList: [...state.initialState, completed]
+        //     }
+        default:
+            return state;
     }
 }
