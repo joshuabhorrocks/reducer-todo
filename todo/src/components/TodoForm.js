@@ -1,10 +1,12 @@
-import React, {useState, useReducer} from "react";
-import {reducer, todoList} from "../reducers/Reducer"
+import React from "react";
+import Todo from "../components/Todo";
 
-const TodoForm = () => {
-    const [state, dispatch] = useReducer(reducer, todoList);
+function TodoForm() {
     return (
-        console.log(todoList)
-    );
+        <div className="formStructure">
+        <h3>Todo Form Here</h3>
+        </div>
+    )
 }
+
 export default TodoForm;
