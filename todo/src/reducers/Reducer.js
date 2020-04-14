@@ -1,34 +1,46 @@
 import React from "react";
 
-export const initialState = [
+export const initialState = {
+    todo: [    
     {
         task: "Learn about reducers", 
         completed: false, 
         id: 1
-    },
-  ]
-
+    }
+]
+}
 export const reducer = (state, action) => {
     switch (action.type) {
         case "ADD_TODO":
-            const newTodo = {
-                item: "",
+            const addTodo = {
+                task: action.payload,
                 completed: false,
-                id:Date.now()
+                id: Date.now()
             }
             return {
                 ...state,
-                initialState: [...initialState, newTodo]
+                todo: [...state.todo, addTodo]
             }
         case "TOGGLE_COMPLETED":
-            const completed = {
-
-            }
             return {
                 ...state,
-                initialState: [...initialState, completed]
+                todo: state.todo.map(item => {
+                    if (action.payload === item.id) {
+                        return {
+                            ...item,
+                            completed: !item.completed
+                        }
+                    } 
+                    return item;
+                })
+            }
+        case "CLEAR_COMPLETE":
+            return {
+                ...state,
+                todo: state.todo.filter(item => !item.completed)
             }
         default:
             return state;
+            
     }
 }
